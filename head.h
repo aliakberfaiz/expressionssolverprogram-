@@ -3,6 +3,13 @@
 #include<conio.h>
 #include<stdio.h>
 #include<string.h>
+/*
+functions in this header file are:-
+1. sti:- converts string form of a number to integer(string to int).
+2. its:- converts integer form of a number to string form (int to string).
+3. indexer:- used to index the numbers in the string expression.
+*/
+
 int sti(char a[])
 {
 int i=0,num=0;
@@ -48,4 +55,30 @@ void its(int num,char a[])
     }
     a[i]='\0';
     strrev(a);
+}
+void indexer(char a[],int b[])
+{
+    int i=0;
+    int c=1;
+    while(a[i])
+    {
+    if(a[i]>='0'&& a[i]<='9')
+    {
+       b[i]=c;
+       i=i+1;
+       continue;
+    }
+    else if(b[i-1]!=0&& i!=0)
+    {
+     b[i]=0;
+     c=c+1;
+     i=i+1;
+    }
+    else
+    {
+        b[i]=0;
+        i=i+1;
+    }
+        }
+    b[i]=0;
 }
